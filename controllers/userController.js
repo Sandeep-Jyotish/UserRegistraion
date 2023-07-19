@@ -81,9 +81,11 @@ module.exports = {
         }
       }
     } catch (error) {
-      // error
       console.error(error);
-      res.status(500).json({ error: "Something went wrong" });
+      res.status(500).json({
+        message: "Something went wrong",
+        error: error.toString(),
+      });
     }
   },
 };
