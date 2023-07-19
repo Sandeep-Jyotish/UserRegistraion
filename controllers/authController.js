@@ -31,14 +31,6 @@ module.exports = {
           });
         }
 
-        if (user.isVerified) {
-          // return badRequest
-          return res.status(403).json({
-            data: {},
-            error: "Email already verified. You can log in now.",
-          });
-        }
-
         // verify the otp
         if (otp !== user.otp) {
           return res.status(403).json({
